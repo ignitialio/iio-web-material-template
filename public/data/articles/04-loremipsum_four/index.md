@@ -1,10 +1,14 @@
 ---
-id: 3
-title: Lorem ipsum one
-article-title: Lorem ipsum one
+id: 4
+title: Lorem ipsum four
+subtitle: Lorem ipsum two
 author: Victor
-date: 2016-04-21
-category: Réflexions
+date: 2018-01-16
+category: Fréquentations
+dark: true
+width: 300
+height: 200
+cover: https://cdn.pixabay.com/photo/2019/08/06/08/21/golden-4387704_960_720.jpg
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper, risus tristique consectetur faucibus, mauris metus molestie odio, vel maximus lorem sapien ut lacus. Nunc eleifend, mauris ac molestie efficitur, ante tellus sollicitudin mauris, sit amet elementum ligula mauris id mauris. Duis rhoncus odio ut mauris blandit, semper mattis diam congue. Sed placerat metus ac interdum fermentum. Aenean pellentesque ipsum elit, id consectetur nibh bibendum ut. Morbi arcu nibh, auctor sit amet enim sit amet, varius ornare mi. Donec id rutrum justo, non posuere augue. Donec congue diam quis orci accumsan laoreet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla ut nisi risus.

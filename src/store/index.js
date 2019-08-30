@@ -16,7 +16,8 @@ export function getStore(Vue) {
       darkTheme: undefined,
       flatToolbar: true,
       toolbarColor: 'transparent'
-    }
+    },
+    article: null
   }
 
   const mutations = {
@@ -28,6 +29,12 @@ export function getStore(Vue) {
     },
     connected(state, value) {
       state.connected = value
+    },
+    ui(state, value) {
+      state.ui = value
+    },
+    article(state, value) {
+      state.article = value
     }
   }
 

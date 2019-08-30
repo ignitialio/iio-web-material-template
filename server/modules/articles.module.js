@@ -32,7 +32,7 @@ class Articles extends Module {
             } else {
               if (comment < 2) {
                 let param = line.split(':')
-                params[param[0]] = param[1].trimLeft()
+                params[param[0]] = param.slice(1).join(':').trimLeft()
               }
             }
 

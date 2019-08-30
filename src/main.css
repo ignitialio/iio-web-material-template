@@ -4,7 +4,6 @@ body {
   overflow: hidden;
 }
 
-
 ::-webkit-scrollbar {
   width: 0.5em;
 }
@@ -16,7 +15,7 @@ body {
 ::-webkit-scrollbar-thumb {
   /* background-color: rgba(208, 188, 38, 0.3);
   border: 1px solid rgba(208, 188, 38, 0.5); */
-  background-color: rgba(8, 18, 38, 0.3);
+  background-color: rgba(88, 88, 118, 0.01);
   border: 1px solid rgba(8, 18, 38, 0.2);
   border-radius: 4px;
 }
@@ -58,6 +57,12 @@ body {
 
 @keyframes blinker {
   50% { opacity: 0; }
+}
+
+@media screen and (max-width: 600px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 800px) {

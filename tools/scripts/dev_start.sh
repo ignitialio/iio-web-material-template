@@ -12,22 +12,23 @@ else
   exit 1
 fi
 
-export APP_VERSION=$(cat package.json \
+export IIOS_APP_VERSION=$(cat package.json \
   | grep version \
   | head -1 \
   | awk -F: '{ print $2 }' \
   | sed 's/[",]//g' \
   | tr -d '[[:space:]]')
 
-echo "app version: ${APP_VERSION}"
+echo "app version: ${IIOS_APP_VERSION}"
 
-export AUTH_VERSION=1.0.2
-export DLAKE_VERSION=3.0.3
+export IIOS_AUTH_VERSION=1.0.2
+export IIOS_DLAKE_VERSION=3.0.3
 
 export IIOS_REST_LOGLEVEL=error
 export IIOS_NAMESPACE=ignitialio
-export MONGODB_DBNAME=ignitialio
-export DROP_FILES_PATH="public/dropped"
+export IIOS_SERVER_PATH="public"
+export IIOS_MONGODB_DBNAME=ignitialio
+export IIOS_DROP_FILES_PATH="public/dropped"
 
 echo "wait 2s for minio ready..."
 sleep 2

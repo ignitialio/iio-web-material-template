@@ -12,17 +12,17 @@ else
   exit 1
 fi
 
-export APP_VERSION=$(cat package.json \
+export IIOS_APP_VERSION=$(cat package.json \
   | grep version \
   | head -1 \
   | awk -F: '{ print $2 }' \
   | sed 's/[",]//g' \
   | tr -d '[[:space:]]')
 
-echo "app version: ${APP_VERSION}"
+echo "app version: ${IIOS_APP_VERSION}"
 
 export IIOS_NAMESPACE=ignitialio
-export MONGODB_DBNAME=ignitialio
+export IIOS_MONGODB_DBNAME=ignitialio
 export IIOS_SERVER_PORT=8000
 export S3_SECURE=false
 export S3_ENDPOINT=localhost

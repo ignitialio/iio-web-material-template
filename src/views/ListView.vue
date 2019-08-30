@@ -11,7 +11,7 @@
           <v-list-item-avatar>
             <v-img :src="item.icon ?
               $utils.fileUrl(item.icon) :
-              'assets/item.png'" alt=""></v-img>
+              'assets/icons/item.png'" alt=""></v-img>
           </v-list-item-avatar>
 
           <v-list-item-content>

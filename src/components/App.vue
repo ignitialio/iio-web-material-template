@@ -12,13 +12,12 @@
         <v-app-bar-nav-icon
           v-if="$router.currentRoute.name !== 'Sign in'"
           @click="leftSidenav = !leftSidenav">
-          <img class="app-logo" src="assets/ignitialio-32.png"/>
+          <v-img max-width="32" aspect-ratio="1"
+            class="app-logo" src="assets/ignitialio-32.png"></v-img>
         </v-app-bar-nav-icon>
 
-        <v-toolbar-title>
+        <v-toolbar-title style="margin-left: -16px">
           <span style="color: deepskyblue">I<span style="color: tomato">G</span>NITIAL</span>
-          <span style="margin-left: 8px; font-variant: small-caps;">
-            {{ $t($router.currentRoute.name) }}</span>
         </v-toolbar-title>
 
         <div class="app-ctx flex-grow-1">
@@ -34,7 +33,7 @@
 
             <v-avatar :size="32" style="border: 1px solid slategrey!important;">
               <img :src="user ? $utils.fileUrl(user.picture.thumbnail) :
-                'assets/user.png'" alt=""/>
+                'assets/icons/user.png'" alt=""/>
             </v-avatar>
          </v-badge>
         </div>
@@ -90,7 +89,7 @@
 
             <v-avatar :size="32" style="border: 1px solid slategrey!important;">
               <img :src="user ? $utils.fileUrl(user.picture.thumbnail) :
-                'assets/user.png'" alt=""/>
+                'assets/icons/user.png'" alt=""/>
             </v-avatar>
          </v-badge>
         </div>
@@ -119,7 +118,7 @@
         <v-list-item-avatar>
           <v-img v-if="user" :src="user && user.picture && user.picture.thumbnail ?
             $utils.fileUrl(user.picture.thumbnail) :
-            'assets/user.png'" alt=""></v-img>
+            'assets/icons/user.png'" alt=""></v-img>
 
           <v-img v-if="!user" class="app-logo" src="assets/ignitialio-32.png"></v-img>
         </v-list-item-avatar>
@@ -176,8 +175,7 @@
               src="assets/logo-ignitial.png" alt=""></v-img>
           </v-list-item-action>
           <v-list-item-content>
-            <span style="color: deepskyblue">I<span style="color: tomato">g</span>nitial</span>
-              {{ new Date().getFullYear() }}
+            <span style="color: deepskyblue">I<span style="color: tomato">g</span>nitial <span style="color: gainsboro"> &copy;{{ new Date().getFullYear() }}</span></span>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -255,6 +253,7 @@ import ServicesView from '../views/ServicesView.vue'
 import BlogView from '../views/BlogView.vue'
 import ContactView from '../views/ContactView.vue'
 import SignUpView from '../views/SignUpView.vue'
+import ArticleView from '../views/ArticleView.vue'
 
 import MyItemsView from '../views/MyItemsView.vue'
 
@@ -349,6 +348,10 @@ export default {
             }
 
             routes.push(item.route)
+
+            if (this.$router.currentRoute.path === item.route.path) {
+              this.selectedMenu = item.title
+            }
           }
         }
       }
@@ -403,7 +406,7 @@ export default {
       {
         index: 0,
         title: 'Home',
-        icon: 'dashboard',
+        icon: 'home',
         anonymousAccess: true,
         route: {
           name: 'Home',
@@ -415,7 +418,7 @@ export default {
       {
         index: 1,
         title: 'Products',
-        icon: 'supervisor_account',
+        icon: 'devices',
         anonymousAccess: true,
         route: {
           name: 'Products',
@@ -427,7 +430,7 @@ export default {
       {
         index: 2,
         title: 'Services',
-        icon: 'supervisor_account',
+        icon: 'business',
         anonymousAccess: true,
         route: {
           name: 'Services',
@@ -439,7 +442,7 @@ export default {
       {
         index: 3,
         title: 'Blog',
-        icon: 'supervisor_account',
+        icon: 'toys',
         anonymousAccess: true,
         route: {
           name: 'Blog',
@@ -502,6 +505,19 @@ export default {
           name: 'My items',
           path: '/myitems',
           component: MyItemsView
+        },
+        selected: false
+      },
+      {
+        index: 14,
+        title: 'Article',
+        icon: 'explore',
+        anonymousAccess: true,
+        hidden: true, /* do not show it in the menu */
+        route: {
+          name: 'Article',
+          path: '/article',
+          component: ArticleView
         },
         selected: false
       },
@@ -615,7 +631,7 @@ export default {
 }
 
 .app-view {
-  height: 100vh!important;
+  height: calc(100vh - 48px);
 }
 
 .app-ctx {
@@ -625,7 +641,7 @@ export default {
 
 .app-router {
   top: 48px;
-  height: calc(100% - 48px);
+  height: calc(100% - 0px);
 }
 
 .app-bar {
@@ -656,7 +672,9 @@ export default {
   text-decoration: underline;
 }
 
-@media screen and (max-width: 800px) {
-
+@media screen and (max-width: 600px) {
+  .app-view {
+    padding: 0!important;
+  }
 }
 </style>

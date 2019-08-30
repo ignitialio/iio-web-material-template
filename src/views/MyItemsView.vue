@@ -10,7 +10,7 @@
           <v-list-item-avatar>
             <v-img :src="item.picture && item.picture.thumbnail ?
               $utils.fileUrl(item.picture.medium) :
-              'assets/item.png'" alt=""></v-img>
+              'assets/icons/item.png'" alt=""></v-img>
           </v-list-item-avatar>
 
           <v-list-item-content>

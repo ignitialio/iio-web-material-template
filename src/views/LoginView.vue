@@ -6,7 +6,7 @@
           style="border: 1px solid slategrey!important;">
           <v-img :src="user && user.picture && user.picture.thumbnail ?
             $utils.fileUrl(user.picture.thumbnail) :
-            'assets/user.png'" alt=""></v-img>
+            'assets/icons/user.png'" alt=""></v-img>
         </v-avatar>
 
         <img v-if="!user" class="app-logo" src="assets/ignitialio-32.png"/>
