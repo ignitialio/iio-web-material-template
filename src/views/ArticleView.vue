@@ -74,7 +74,7 @@ export default {
 }
 
 .article-cover {
-  width: 710px;
+  width: 706px;
   margin: 4px 0;
   padding: 2px;
   border: 1px solid gainsboro;

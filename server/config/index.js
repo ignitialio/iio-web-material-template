@@ -42,6 +42,8 @@ module.exports = {
     }, {
       name: 'notifications'
     }, {
+      name: 'connections'
+    }, {
       /* example */
       name: 'myitems'
     }],
